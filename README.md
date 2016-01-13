@@ -57,6 +57,7 @@
 ```js
       <script>
 
+           function createJs(sUrl){
 
                var oScript = document.createElement('script');
                oScript.type = 'text/javascript';
