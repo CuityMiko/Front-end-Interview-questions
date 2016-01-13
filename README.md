@@ -55,27 +55,26 @@
 
 
 ```js
-        <script>
+      <script>
 
-            function createJs(sUrl){
 
-                var oScript = document.createElement('script');
-                oScript.type = 'text/javascript';
-                oScript.src = sUrl;
-                document.getElementsByTagName('head')[0].appendChild(oScript);
-            }
+               var oScript = document.createElement('script');
+               oScript.type = 'text/javascript';
+               oScript.src = sUrl;
+               document.getElementsByTagName('head')[0].appendChild(oScript);
+           }
 
-            createJs('jsonp.js');
+           createJs('jsonp.js');
 
-            box({
-               'name': 'test'
-            });
+           box({
+              'name': 'test'
+           });
 
-            function box(json){
-                alert(json.name);
-            }
+           function box(json){
+               alert(json.name);
+           }
 
-        </script>
+       </script>
 ```
 
 
@@ -936,11 +935,11 @@ IE 提供了一种存储可以持久化用户数据，叫做`userdata`，从`IE5
 
 >`display:none`和`visibility:hidden`的区别？
 
-
+```css
     display:none  隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。
 
     visibility:hidden  隐藏对应的元素，但是在文档布局中仍保留原来的空间。
-
+```
 
 
 >CSS中` link` 和`@import `的区别是？
@@ -1014,7 +1013,7 @@ IE 提供了一种存储可以持久化用户数据，叫做`userdata`，从`IE5
 
 >CSS3新增伪类举例：
 
-```css
+```
     p:first-of-type 选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
 
     p:last-of-type  选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
@@ -1908,25 +1907,25 @@ open('GET','demo.php?rand=+Math.random()',true);//
 
     {
 
-    	var n = {},r=[]; //n为hash表，r为临时数组
+        var n = {},r=[]; //n为hash表，r为临时数组
 
-    	for(var i = 0; i < this.length; i++) //遍历当前数组
+        for(var i = 0; i < this.length; i++) //遍历当前数组
 
-    	{
+        {
 
-    		if (!n[this[i]]) //如果hash表中没有当前项
+            if (!n[this[i]]) //如果hash表中没有当前项
 
-    		{
+            {
 
-    			n[this[i]] = true; //存入hash表
+                n[this[i]] = true; //存入hash表
 
-    			r.push(this[i]); //把当前数组的当前项push到临时数组里面
+                r.push(this[i]); //把当前数组的当前项push到临时数组里面
 
-    		}
+            }
 
-    	}
+        }
 
-    	return r;
+        return r;
 
     }
 
@@ -1936,21 +1935,21 @@ open('GET','demo.php?rand=+Math.random()',true);//
 
     {
 
-    	var n = [this[0]]; //结果数组
+        var n = [this[0]]; //结果数组
 
-    	for(var i = 1; i < this.length; i++) //从第二项开始遍历
+        for(var i = 1; i < this.length; i++) //从第二项开始遍历
 
-    	{
+        {
 
-    		//如果当前数组的第i项在当前数组中第一次出现的位置不是i，
+            //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
 
-    		//那么表示第i项是重复的，忽略掉。否则存入结果数组
+            //那么表示第i项是重复的，忽略掉。否则存入结果数组
 
-    		if (this.indexOf(this[i]) == i) n.push(this[i]);
+            if (this.indexOf(this[i]) == i) n.push(this[i]);
 
-    	}
+        }
 
-    	return n;
+        return n;
 
     }
 ```
@@ -2002,13 +2001,13 @@ open('GET','demo.php?rand=+Math.random()',true);//
 
 
 
-	pending: 初始状态, 非 fulfilled 或 rejected.
+    pending: 初始状态, 非 fulfilled 或 rejected.
 
-	fulfilled: 成功的操作.
+    fulfilled: 成功的操作.
 
-	rejected: 失败的操作.
+    rejected: 失败的操作.
 
-	settled: Promise已被fulfilled或rejected，且不是pending
+    settled: Promise已被fulfilled或rejected，且不是pending
 
 
 
@@ -2028,19 +2027,19 @@ open('GET','demo.php?rand=+Math.random()',true);//
 
 
 ```js
-	var promise = new Promise(function(resolve, reject) {
+    var promise = new Promise(function(resolve, reject) {
 
-	    if (...) {  // succeed
+        if (...) {  // succeed
 
-	        resolve(result);
+            resolve(result);
 
-	    } else {   // fails
+        } else {   // fails
 
-	        reject(Error(errMessage));
+            reject(Error(errMessage));
 
-	    }
+        }
 
-	});
+    });
 ```
 
 
@@ -2676,13 +2675,13 @@ git fetch：相当于是从远程获取最新版本到本地，不会自动merge
 
 ```js
 
-	物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）
-	数据链路层：将比特组装成帧和点到点的传递（帧Frame）
-	网络层：负责数据包从源到宿的传递和网际互连（包PackeT）
-	传输层：提供端到端的可靠报文传递和错误恢复（段Segment）
-	会话层：建立、管理和终止会话（会话协议数据单元SPDU）
-	表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）
-	应用层：允许访问OSI环境的手段（应用协议数据单元APDU）
+    物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）
+    数据链路层：将比特组装成帧和点到点的传递（帧Frame）
+    网络层：负责数据包从源到宿的传递和网际互连（包PackeT）
+    传输层：提供端到端的可靠报文传递和错误恢复（段Segment）
+    会话层：建立、管理和终止会话（会话协议数据单元SPDU）
+    表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）
+    应用层：允许访问OSI环境的手段（应用协议数据单元APDU）
 ```
 
 >各种协议
